@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# nwitter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+**Service**
 
-In the project directory, you can run:
+[nwitter](https://kimjunhyeong1.github.io/nwitter)
 
-### `npm start`
+**블로그**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[[사이드프로젝트] 01. Twitter 트위터 클론 코딩 - 서비스 기획부터 개발까지의 모든 것](https://toe-sa.tistory.com/entry/%EC%82%AC%EC%9D%B4%EB%93%9C%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-01-Twitter-%ED%8A%B8%EC%9C%84%ED%84%B0-%ED%81%B4%EB%A1%A0-%EC%BD%94%EB%94%A9-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B8%B0%ED%9A%8D%EB%B6%80%ED%84%B0-%EA%B0%9C%EB%B0%9C%EA%B9%8C%EC%A7%80%EC%9D%98-%EB%AA%A8%EB%93%A0-%EA%B2%83)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📖 상세 내용
 
-### `npm test`
+**# Sign in Page**  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![img](https://user-images.githubusercontent.com/41819129/181447381-b4ccad55-700d-46f5-b6cf-ade5abefae04.gif)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**# Login Page**  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![img (1)](https://user-images.githubusercontent.com/41819129/181447403-ba693a6f-5157-4c3a-b8b6-22a5b3f38a13.gif)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+**# Main Page**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![img (2)](https://user-images.githubusercontent.com/41819129/181447434-7617e824-2fa5-45a6-9d6e-420246d8ec40.gif)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**# Logout Page**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![img (3)](https://user-images.githubusercontent.com/41819129/181447440-b599ec27-5836-4541-aaed-8267ca5b8610.gif)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🛠️ 사용 기술 및 라이브러리
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- HTML5 / CSS3
+- JavaScript(ES6+)
+- React
+- Firebase (Authentication, Cloud Firestore, Storage)
 
-### Code Splitting
+## 📱 과정
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- HTML,CSS 와 React 기본개념을 배우고, [노마드 코더 트위터 클론코딩 강의](https://nomadcoders.co/nwitter)를 통해 트위터의 기본 기능을 구현
+- 기존 트위터와 동일하게 디자인을 바꾸기 위해 기획서를 참고하여 CSS 작업
+- 기본 기능에서 기획서 명시된 기능 추가 구현
+- GitHub Pages를 통해 수정된 버전을 배포
 
-### Analyzing the Bundle Size
+## 💡 깨달은 점
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 기획서에 있는 디자인을 그대로 구현하는 것은 쉽지않다...
+- React를 이용하면 HTML, CSS, JS 코드를 효율적으로 관리할 수 있다.
+- **react-router-dom'** 을 이용하여 경로를 변경할 수 있다.
+- 크롬 개발자 도구에서 모바일 환경을 테스트 할 수 있다.
+- Firebase의 [orderby 메서드](https://firebase.google.com/docs/reference/js/firestore_.md?authuser=0#orderby)를 이용하여 query를 만들 수 있다.
