@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { sendPasswordResetEmail } from "firebase/auth";
 import { authService } from "firebaseInstance";
-import { signInWithEmailAndPassword } from "firebase/auth";
 
-const AuthForm = () => {
+const Forgotpassword = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const history = useHistory();
 
   const onChange = (event) => {
     const {
@@ -14,26 +15,33 @@ const AuthForm = () => {
 
     if (name === "email") {
       setEmail(value);
-    } else if (name === "password") {
-      setPassword(value);
     }
   };
-
   const onSubmit = async (event) => {
     event.preventDefault();
+
     try {
-      const data = await signInWithEmailAndPassword(
-        authService,
-        email,
-        password
-      );
+      sendPasswordResetEmail(authService, email).then(() => {});
+      onClicklogin();
     } catch (error) {
       setError(error.message);
     }
   };
 
+  const onClicklogin = () => {
+    history.push("/");
+  };
+
   return (
-    <>
+    <div className="signinContainer">
+      <div>
+        <button className="exit" onClick={onClicklogin}>
+          X
+        </button>
+      </div>
+      <div>
+        <p>비밀번호 재설정</p>
+      </div>
       <form onSubmit={onSubmit} className="container">
         <input
           name="email"
@@ -44,24 +52,12 @@ const AuthForm = () => {
           onChange={onChange}
           className="authInput"
         />
-        <input
-          name="password"
-          type="password"
-          placeholder="비밀번호"
-          required
-          value={password}
-          onChange={onChange}
-          className="authInput"
-        />
-        <input
-          type="submit"
-          value={"로그인"}
-          className="authInput authSubmit"
-        />
+
+        <input type="submit" value={"확인"} className="authInput authSubmit" />
         {error && <span className="authError">{error}</span>}
       </form>
-    </>
+    </div>
   );
 };
 
-export default AuthForm;
+export default Forgotpassword;
