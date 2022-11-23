@@ -1,28 +1,28 @@
-import React, { useState } from "react";
-import { authService } from "firebaseInstance";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useHistory } from "react-router-dom";
-import { dbService } from "firebaseInstance";
-import { doc, setDoc } from "firebase/firestore";
+import React, { useState } from 'react';
+import { authService } from 'firebaseInstance';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useHistory } from 'react-router-dom';
+import { dbService } from 'firebaseInstance';
+import { doc, setDoc } from 'firebase/firestore';
 
 const Signin = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
   const [newAccount, setNewAccount] = useState(true);
-  const [User, setUser] = useState("");
-  const [error, setError] = useState("");
+  const [User, setUser] = useState('');
+  const [error, setError] = useState('');
 
   const onChange = (event) => {
     const {
       target: { name, value },
     } = event;
 
-    if (name === "email") {
+    if (name === 'email') {
       setEmail(value);
-    } else if (name === "password") {
+    } else if (name === 'password') {
       setPassword(value);
-    } else if (name === "name") {
+    } else if (name === 'name') {
       setName(value);
     }
   };
@@ -39,14 +39,14 @@ const Signin = () => {
         );
       } else {
       }
-      await setDoc(doc(dbService, "user", email), {
+      await setDoc(doc(dbService, 'user', email), {
         name: name,
         user: email,
         createdAt: Date.now(),
         password: password,
-        usercode: "0",
+        usercode: '0',
       });
-      history.push("/");
+      history.push('/');
     } catch (error) {
       setError(error.message);
     }
@@ -54,7 +54,7 @@ const Signin = () => {
   const history = useHistory();
 
   const onClicklogin = () => {
-    history.push("/");
+    history.push('/');
   };
 
   return (
@@ -95,7 +95,7 @@ const Signin = () => {
           onChange={onChange}
           className="authInput"
         />
-        <input type="submit" value={"확인"} className="authInput authSubmit" />
+        <input type="submit" value={'확인'} className="authInput authSubmit" />
         {error && <span className="authError">{error}</span>}
       </form>
     </div>
