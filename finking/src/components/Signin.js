@@ -35,7 +35,7 @@ const Signin = () => {
         const data = await createUserWithEmailAndPassword(
           authService,
           email,
-          password
+          password,
         );
       } else {
       }
@@ -46,7 +46,7 @@ const Signin = () => {
         password: password,
         usercode: '0',
       });
-      history.push('/');
+      history.push('/survey');
     } catch (error) {
       setError(error.message);
     }
@@ -59,45 +59,85 @@ const Signin = () => {
 
   return (
     <div className="signinContainer">
-      <div>
-        <button className="exit" onClick={onClicklogin}>
-          X
-        </button>
+      <div className="backmain_si">
+        <div className="signinleft">
+          <text className="signintext">Finking</text>
+          <div className="null"></div>
+          <text style={{ fontSize: 25, paddingRight: 60 }}>
+            Already Signed up?
+          </text>
+          <div>
+            <button className="returnlogin" onClick={onClicklogin}>
+              LOG IN
+            </button>
+          </div>
+        </div>
+        <div className="signinright">
+          <text
+            className="righttext"
+            style={{
+              fontSize: 25,
+              fontWeight: 'bold',
+              paddingBottom: 40,
+            }}
+          >
+            Sign up for an Account
+          </text>
+          <text
+            className="righttext"
+            style={{
+              fontSize: 15,
+            }}
+          >
+            Let`s get you all set up so you can start creating your
+          </text>
+          <text
+            className="righttext"
+            style={{
+              fontSize: 15,
+              paddingBottom: 40,
+            }}
+          >
+            first finking experience.
+          </text>
+
+          <form onSubmit={onSubmit} className="container">
+            <label className="righttext">Name</label>
+            <input
+              name="name"
+              type="text"
+              required
+              value={name}
+              onChange={onChange}
+              className="authInput"
+            />
+            <label className="righttext">Email</label>
+            <input
+              name="email"
+              type="text"
+              required
+              value={email}
+              onChange={onChange}
+              className="authInput"
+            />
+            <label className="righttext">Password</label>
+            <input
+              name="password"
+              type="password"
+              required
+              value={password}
+              onChange={onChange}
+              className="authInput"
+            />
+            <input
+              type="submit"
+              value={'Go Finking'}
+              className="authInput authSubmit"
+            />
+            {error && <span className="authError">{error}</span>}
+          </form>
+        </div>
       </div>
-      <div>
-        <p>회원가입</p>
-      </div>
-      <form onSubmit={onSubmit} className="container">
-        <input
-          name="name"
-          type="text"
-          placeholder="이름"
-          required
-          value={name}
-          onChange={onChange}
-          className="authInput"
-        />
-        <input
-          name="email"
-          type="text"
-          placeholder="이메일"
-          required
-          value={email}
-          onChange={onChange}
-          className="authInput"
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="비밀번호"
-          required
-          value={password}
-          onChange={onChange}
-          className="authInput"
-        />
-        <input type="submit" value={'확인'} className="authInput authSubmit" />
-        {error && <span className="authError">{error}</span>}
-      </form>
     </div>
   );
 };

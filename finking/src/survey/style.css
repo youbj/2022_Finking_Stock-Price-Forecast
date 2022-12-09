@@ -1,9 +1,23 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 650px;
+  margin-left: 50px;
+}
+.radio {
+  margin-right: 10px;
+}
 .wrap {
-  width: 800px;
-  background-color: #cccddc;
-  border: 1px solid #666;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: #fff;
+  border: 1px solid rgba(2, 2, 2, 0.2);
+  border-radius: 15px;
   padding: 20px;
   margin: 20px auto;
+  box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);
 }
 
 .wrap p {
@@ -31,7 +45,7 @@
 .wrap p button {
   width: 150px;
   height: 40px;
-  background: #000;
+  background: royalblue;
   color: #fff;
   border: none;
   margin-right: 15px;
@@ -42,25 +56,44 @@
   font-weight: bold;
 }
 .surveytext_Logo {
+  font-family: 'alef';
   margin: 0 auto;
   margin-left: 20px;
   margin-bottom: 50px;
   margin-top: 20px;
-  color: #222;
+  color: royalblue;
   display: inline-block;
 }
 .save {
+  font-family: 'alef';
+  cursor: pointer;
   width: 150px;
   height: 40px;
-  background: #000;
+  background: royalblue;
   color: #fff;
   border: none;
-  margin-right: 15px;
+  justify-content: center;
+  border: 1px solid rgba(2, 2, 2, 0.2);
+  border-radius: 10px;
+}
+.save:hover {
+  background-color: #04aaff;
 }
 .survey {
   color: #222;
-  font-size: 16px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  font-family: 'nanum';
 }
 .sur_exit {
   margin-left: 500px;
+}
+.survey_div {
+  margin-bottom: 10px;
+  font-family: 'nanum';
+}
+.nanum {
+  font-family: 'nanum';
 }

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { sendPasswordResetEmail } from "firebase/auth";
-import { authService } from "firebaseInstance";
-
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { sendPasswordResetEmail } from 'firebase/auth';
+import { authService } from 'firebaseInstance';
+import pw from '../img/pw.png';
 const Forgotpassword = () => {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
   const history = useHistory();
 
   const onChange = (event) => {
@@ -13,7 +13,7 @@ const Forgotpassword = () => {
       target: { name, value },
     } = event;
 
-    if (name === "email") {
+    if (name === 'email') {
       setEmail(value);
     }
   };
@@ -29,33 +29,58 @@ const Forgotpassword = () => {
   };
 
   const onClicklogin = () => {
-    history.push("/");
+    history.push('/');
   };
 
   return (
-    <div className="signinContainer">
-      <div>
-        <button className="exit" onClick={onClicklogin}>
-          X
-        </button>
+    <div className="backdrop">
+      <div className="signinContainer">
+        <div className="pwcontainer1">
+          <div className="pwtop">
+            <img src={pw} width="60" style={{ marginLeft: 30 }} />
+            <p
+              className="inline nomargin fonts30"
+              style={{ paddingTop: 10, paddingLeft: 20 }}
+            >
+              Forget Password?
+            </p>
+          </div>
+          <form onSubmit={onSubmit} className="pwcontainer">
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                width: '100%',
+              }}
+            >
+              <text className="inline" style={{ width: 100, marginLeft: 50 }}>
+                Full Name
+              </text>
+              <input name="name" type="text" className="pwInput inline" />
+            </div>
+            <div className="flex">
+              <text className="inline" style={{ width: 100, marginLeft: 50 }}>
+                Email
+              </text>
+              <input
+                name="email"
+                type="text"
+                required
+                value={email}
+                onChange={onChange}
+                className="pwInput flex"
+              />
+            </div>
+            <div className="flex" style={{ marginTop: 10 }}>
+              <input type="submit" value={'Yes'} className="pwyes authSubmit" />
+              <button className="pwno inline" onClick={onClicklogin}>
+                No
+              </button>
+            </div>
+            {error && <span className="authError">{error}</span>}
+          </form>
+        </div>
       </div>
-      <div>
-        <p>비밀번호 재설정</p>
-      </div>
-      <form onSubmit={onSubmit} className="container">
-        <input
-          name="email"
-          type="text"
-          placeholder="이메일"
-          required
-          value={email}
-          onChange={onChange}
-          className="authInput"
-        />
-
-        <input type="submit" value={"확인"} className="authInput authSubmit" />
-        {error && <span className="authError">{error}</span>}
-      </form>
     </div>
   );
 };
