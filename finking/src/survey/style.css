@@ -1,0 +1,99 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 650px;
+  margin-left: 50px;
+}
+.radio {
+  margin-right: 10px;
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: #fff;
+  border: 1px solid rgba(2, 2, 2, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 2px 7px 15px 8px rgba(0, 0, 0, 0.3);
+}
+
+.wrap p {
+  margin-bottom: 10px;
+}
+
+.wrap p span {
+  margin-left: 10px;
+}
+
+.wrap form {
+  padding-left: 30px;
+}
+
+.wrap p input {
+  margin-left: 10px;
+  width: 250px;
+  height: 30px;
+  border: 1px solid #999;
+  padding: 0 15px;
+}
+.wrap p:last-child {
+  margin-top: 50px;
+}
+.wrap p button {
+  width: 150px;
+  height: 40px;
+  background: royalblue;
+  color: #fff;
+  border: none;
+  margin-right: 15px;
+}
+.surveytext {
+  color: #222;
+  font-size: 20px;
+  font-weight: bold;
+}
+.surveytext_Logo {
+  font-family: 'alef';
+  margin: 0 auto;
+  margin-left: 20px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+  color: royalblue;
+  display: inline-block;
+}
+.save {
+  font-family: 'alef';
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+  background: royalblue;
+  color: #fff;
+  border: none;
+  justify-content: center;
+  border: 1px solid rgba(2, 2, 2, 0.2);
+  border-radius: 10px;
+}
+.save:hover {
+  background-color: #04aaff;
+}
+.survey {
+  color: #222;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  font-family: 'nanum';
+}
+.sur_exit {
+  margin-left: 500px;
+}
+.survey_div {
+  margin-bottom: 10px;
+  font-family: 'nanum';
+}
+.nanum {
+  font-family: 'nanum';
+}
